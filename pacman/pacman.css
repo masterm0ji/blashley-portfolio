@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: cadetblue
+}
+#PacMan {
+    position: absolute;
+    left: 0;
+}
+
+.ball {
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    /*left: 175px;
+    top: 640px;*/
+}
+
+#game {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+
+
+
+
