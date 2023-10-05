@@ -55,26 +55,19 @@ function update() {
 
 function checkCollisions(item) {
   // TODO: detect collision with all walls and make pacman bounce
- const {position, velocity} = item;
- const {x,y} = position;
- const {width, height} = item.newimg;
-
+ if (
+    item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
+    item.position.x + item.velocity.x < 0
+  )
+    item.velocity.x = -item.velocity.x;
   if (
-    x + velocity.x < 0 || 
-    x + velocity.x + width > window.innerWidth) {
-    velocity.x = -velocity.x;
-    }
-
-  if(
-    y + velocity.y < 0 ||  
-    y + velocity.y + height > window.innerHeight) {
-    velocity.y = -velocity.y;
-    }
+    item.position.y + item.velocity.y + item.newimg.height > window.innerHeight ||
+    item.position.y + item.velocity.y < 0
+  )
+    item.velocity.y = -item.velocity.y;
 }
 
 function makeOne() {
-  for (let i = 0; i < 5; i++) {
     pacMen.push(makePac());
-  }
 }
 
