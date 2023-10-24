@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useFormik } from "formik";
-import "./styles.css";
+import "./index.css";
 
 function App() {
   const formik = useFormik({
