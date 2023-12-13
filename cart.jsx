@@ -102,9 +102,11 @@ const Products = (props) => {
   const addToCart = (e) => {
     let name = e.target.name;
     let item = items.filter((item) => item.name == name);
+    if (item[0].instock == 0) return;
+    item[0].instock = item[0].instock - 1;
     console.log(`add to Cart ${JSON.stringify(item)}`);
     setCart([...cart, ...item]);
-    doFetch(query);
+    //doFetch(query)
   };
   const deleteCartItem = (index) => {
     let newCart = cart.filter((item, i) => index != i);
